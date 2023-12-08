@@ -1,5 +1,3 @@
-nextflow.enable.dsl = 2
-
 
 include { FASTQC  } from '/workspace/data/ninon/description_prototype/modules_nextflow/fastqc.nf'
 include { TRIMGALORE  } from '/workspace/data/ninon/description_prototype/modules_nextflow/trimgalore.nf'

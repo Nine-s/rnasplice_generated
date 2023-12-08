@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: dreamy-sanger
+  name: kickass-ramanujan
   namespace: default
-  labels: {app: nextflow, runName: dreamy-sanger}
+  labels: {app: nextflow, runName: kickass-ramanujan}
 spec:
   restartPolicy: Never
   containers:
-  - name: dreamy-sanger
+  - name: kickass-ramanujan
     image: nextflow/nextflow:23.09.3-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/rnasplice_generated
-        -name dreamy-sanger -resume last -r master]
+        -name kickass-ramanujan -resume last -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-7b55d045}
+    configMap: {name: nf-config-a390e0a8}

@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: prickly-hoover
+  name: amazing-dalembert
   namespace: default
-  labels: {app: nextflow, runName: prickly-hoover}
+  labels: {app: nextflow, runName: amazing-dalembert}
 spec:
   restartPolicy: Never
   containers:
-  - name: prickly-hoover
+  - name: amazing-dalembert
     image: nextflow/nextflow:23.09.3-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/rnasplice_generated
-        -name prickly-hoover -resume last -r master]
+        -name amazing-dalembert -resume last -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-87b1673c}
+    configMap: {name: nf-config-fed22bf4}

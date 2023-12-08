@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: compassionate-austin
+  name: gigantic-plateau
   namespace: default
-  labels: {app: nextflow, runName: compassionate-austin}
+  labels: {app: nextflow, runName: gigantic-plateau}
 spec:
   restartPolicy: Never
   containers:
-  - name: compassionate-austin
+  - name: gigantic-plateau
     image: nextflow/nextflow:23.09.3-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/rnasplice_generated
-        -name compassionate-austin -resume last -r master]
+        -name gigantic-plateau -resume last -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-2f0ff767}
+    configMap: {name: nf-config-7851b70d}

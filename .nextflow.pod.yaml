@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nice-jang
+  name: zen-spence
   namespace: default
-  labels: {app: nextflow, runName: nice-jang}
+  labels: {app: nextflow, runName: zen-spence}
 spec:
   restartPolicy: Never
   containers:
-  - name: nice-jang
+  - name: zen-spence
     image: nextflow/nextflow:23.09.3-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/rnasplice_generated
-        -name nice-jang -resume last -r master]
+        -name zen-spence -resume last -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-1069549e}
+    configMap: {name: nf-config-ca3b1757}

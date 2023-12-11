@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: clever-pesquet
+  name: golden-hilbert
   namespace: default
-  labels: {app: nextflow, runName: clever-pesquet}
+  labels: {app: nextflow, runName: golden-hilbert}
 spec:
   restartPolicy: Never
   containers:
-  - name: clever-pesquet
+  - name: golden-hilbert
     image: nextflow/nextflow:23.09.3-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/rnasplice_generated
-        -name clever-pesquet -resume last -r master]
+        -name golden-hilbert -resume last -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-61fe48ea}
+    configMap: {name: nf-config-07863bb1}

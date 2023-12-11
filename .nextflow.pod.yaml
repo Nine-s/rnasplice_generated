@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: fervent-caravaggio
+  name: nice-jang
   namespace: default
-  labels: {app: nextflow, runName: fervent-caravaggio}
+  labels: {app: nextflow, runName: nice-jang}
 spec:
   restartPolicy: Never
   containers:
-  - name: fervent-caravaggio
+  - name: nice-jang
     image: nextflow/nextflow:23.09.3-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/rnasplice_generated
-        -name fervent-caravaggio -resume last -r master]
+        -name nice-jang -resume last -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-4223359b}
+    configMap: {name: nf-config-1069549e}

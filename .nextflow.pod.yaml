@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tiny-yalow
+  name: magical-gauss
   namespace: default
-  labels: {app: nextflow, runName: tiny-yalow}
+  labels: {app: nextflow, runName: magical-gauss}
 spec:
   restartPolicy: Never
   containers:
-  - name: tiny-yalow
+  - name: magical-gauss
     image: nextflow/nextflow:23.09.3-edge
     command: [/bin/bash, -c, source /etc/nextflow/init.sh; nextflow run Nine-s/rnasplice_generated
-        -name tiny-yalow -resume last -r master]
+        -name magical-gauss -resume last -r master]
     env:
     - {name: NXF_WORK, value: /workspace/ninon/work}
     - {name: NXF_ASSETS, value: /workspace/projects}
@@ -25,4 +25,4 @@ spec:
   - name: vol-1
     persistentVolumeClaim: {claimName: nextflow-ninon}
   - name: vol-2
-    configMap: {name: nf-config-e73bf620}
+    configMap: {name: nf-config-493b2262}
